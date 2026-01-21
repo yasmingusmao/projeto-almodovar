@@ -1,0 +1,86 @@
+@use 'variaveis';
+
+.filmes {
+    padding: 4rem 2rem;
+
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: variaveis.$vermelho-almodovar;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        &__card {
+            background-color: variaveis.$corDoCard;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+
+            &__image {
+                width: 100%;
+                height: 400px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    display: block;
+                }
+            }
+            
+
+            &__info {
+                padding: 1.5rem;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                &__ano {
+                    font-weight: 400;
+                    color: variaveis.$corTextoSecundario;
+                    font-size: 1.2rem;
+                    display: block;
+                    margin-bottom: 0.5rem;
+                }
+
+                &__sinopse {
+                    font-size: 0.95rem;
+                    margin-bottom: 1.2rem;
+                    flex-grow: 1;
+                }
+
+                &__tags {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    span {
+                        background-color: variaveis.$vermelho-almodovar;
+                        color: variaveis.$corTextoPrincipal;
+                        padding: 0.3rem 0.7rem;
+                        border-radius: 20px;
+                        font-size: 0.8rem;
+                        margin-right: 0.5rem;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}

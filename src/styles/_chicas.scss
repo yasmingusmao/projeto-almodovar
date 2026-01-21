@@ -1,0 +1,80 @@
+@use 'variaveis';
+
+.chicas {
+    padding: 6rem 2rem;
+    background-color: variaveis.$corDoCard;
+
+    &__content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: variaveis.$vermelho-almodovar;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            color: variaveis.$corTextoSecundario;
+        }
+
+        &__galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+
+            &__item {
+                position: relative;
+                height: 350px;
+                border-radius: 12px;
+                overflow: hidden;
+                cursor: pointer;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.5s ease;
+                }
+
+                &__overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to top, rgba(variaveis.$vermelho-almodovar, 0.9), transparent);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 1.5rem;
+                    opacity: 0;
+                    transition: opacity 0.4s ease;
+
+                    h4 {
+                        color: white;
+                        font-size: 1.5rem;
+                        margin-bottom: 0.2rem;
+                        transform: translateY(20px);
+                        transition: transform 0.4s ease;
+                    }
+
+                    span {
+                        color: rgba(255, 255, 255, 0.8);
+                        font-size: 0.9rem;
+                        font-style: italic;
+                        transform: translateY(20px);
+                        transition: transform 0.4s ease 0.1s;
+                    }
+                }
+            }
+        }
+    }
+}
