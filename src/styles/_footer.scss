@@ -1,0 +1,64 @@
+@use 'variaveis';
+
+.footer {
+    background-color: #000;
+    padding: 4rem 0 2rem;
+    border-top: 2px solid variaveis.$vermelho-almodovar;
+
+    &__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 2rem;
+
+        p {
+            margin-bottom: 1.5rem;
+            color: variaveis.$corTextoSecundario;
+            font-size: 1rem;
+            line-height: 1.6;
+
+            &:first-child {
+                font-family: 'Lora', serif;
+                font-style: italic;
+                font-size: 1.2rem;
+                color: variaveis.$corTextoPrincipal;
+            }
+
+            &:last-child {
+                font-size: 0.85rem;
+                margin-top: 2rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 2rem;
+            }
+
+            a {
+                color: variaveis.$vermelho-almodovar;
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 1px;
+                    bottom: -2px;
+                    left: 0;
+                    background-color: variaveis.$vermelho-almodovar;
+                    transition: width 0.3s ease;
+
+                    &:hover {
+                    color: white;
+                    
+                        &::after {
+                            width: 100%;
+                            background-color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

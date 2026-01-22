@@ -1,0 +1,39 @@
+@use 'variaveis';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid variaveis.$vermelho-almodovar;
+    
+    &__container {
+        padding: 0.5rem 2.25rem;
+        display: flex;
+        justify-content: end;
+    }
+
+    &__links {
+        display: flex;
+        list-style-type: none;
+        gap: 2rem;
+
+        li {
+            a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: variaveis.$vermelho-almodovar;
+                }
+            }
+        }
+    }
+}
