@@ -26,6 +26,11 @@
             display: flex;
             flex-direction: column;
 
+            &:hover{
+                transform: translateY(-10px);
+                box-shadow: 0 8px 25px rgba(variaveis.$vermelho-almodovar, 0.2);
+            }
+
             &__image {
                 width: 100%;
                 height: 400px;

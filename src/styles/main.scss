@@ -1,3 +1,4 @@
+@use 'reset';
 @use 'variaveis';
 @use 'header';
 @use 'hero';
@@ -5,15 +6,36 @@
 @use 'chicas';
 @use 'footer';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+    scroll-behavior: smooth;
 }
-
 body {
     background-color: variaveis.$corDeFundo;
     color: variaveis.$corTextoPrincipal;
     font-family: variaveis.$fonteCorpo;
+    overflow-x: hidden;
 }
 
+.btn-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: variaveis.$vermelho-almodovar;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+
+    &:hover {
+        background-color: white;
+        color: variaveis.$vermelho-almodovar;
+        transform: scale(1.1);
+    }
+}
